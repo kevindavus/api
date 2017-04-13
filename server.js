@@ -1,4 +1,3 @@
-'use strict'
 var express = require('express');
 var app = express();
 
@@ -76,6 +75,6 @@ app.get('/:time', function(req, res){
   res.send(JSON.stringify(str));
 })
 
-app.listen(80, function(){
-  console.log('listening on http://127.0.0.1:8080');
+app.listen(process.env.PORT || 80, function(){
+  console.log('listening on http://127.0.0.1:' + process.env.PORT||80);
 });
