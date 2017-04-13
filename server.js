@@ -2,6 +2,8 @@
 var express = require('express');
 var app = express();
 
+app.use('/', express.static('public'))
+
 
 app.get('/:time', function(req, res){
   var time = req.params.time;
@@ -74,6 +76,6 @@ app.get('/:time', function(req, res){
   res.send(JSON.stringify(str));
 })
 
-app.listen(80, function(){
-  console.log('listening on *:80');
+app.listen(8080, function(){
+  console.log('listening on http://127.0.0.1:8080');
 });

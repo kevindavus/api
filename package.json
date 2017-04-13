@@ -1,5 +1,13 @@
 {
-  "scripts": {
-  "start": "node server.js"
+  "name": "kevindavus-express",
+  "version": "0.0.1",
+  "description": "Give a unix or Natural date and receive both",
+  "dependencies":
+  {
+    "express": ""
+  },
+  "scripts":
+  {
+    "start": "node server.js"
   }
 }
