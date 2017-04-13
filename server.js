@@ -9,15 +9,13 @@ app.get('/:time', function(req, res){
     res.send();
     return;
   }
-  console.log(time);
   var natural;
   var date;
   var unix;
   if (time.indexOf(' ') === -1){
     date = new Date(Number(time)*1000);
-    console.log(date);
     unix = Number(time);
-    natural = date.toGMTString();
+    natural = date.toLocaleString("en-us", { month: "long" }) +" " + Number(date.getDate()+1) + ", " + Number(date.getYear()+1900);
   } else {
     var strMonth, day, year;
     [strMonth, day, year] = time.split(' ');
@@ -63,13 +61,9 @@ app.get('/:time', function(req, res){
         break;
     }
     date = new Date('2015-12-15T00:00:00');
-    console.log('test')
     date.setYear(Number(year));
-    console.log(date)
     date.setDate(Number(day)-1);
-    console.log(date)
     date.setMonth(month);
-    console.log(Math.floor(date.getTime()/1000))
     unix = Math.floor(date.getTime()/1000);
   }
   var str = {
