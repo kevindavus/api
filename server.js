@@ -76,6 +76,6 @@ app.get('/:time', function(req, res){
   res.send(JSON.stringify(str));
 })
 
-app.listen(8080, function(){
+app.listen(80, function(){
   console.log('listening on http://127.0.0.1:8080');
 });
